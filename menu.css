@@ -1,0 +1,99 @@
+/* Hero */
+#mealHeader {
+  position: relative;
+  height: 50vh;
+  background: url('/images/menu-hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+.meal-content h1 { font-size: 5rem; }
+#menuParagraph { font-size: 1.2rem; max-width: 800px; }
+
+/* Category Headers - Parallax Effect */
+.category-section {
+  height: 50vh;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.category-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.category-section h1 {
+  font-size: 5.5rem;
+  color: white;
+  text-shadow: 0 0 30px black;
+  position: relative;
+  z-index: 2;
+}
+
+/* Specific Backgrounds */
+#intercontinental { background: url('/images/intercontinental.jpg'); }
+#local-dishes     { background: url('/images/amala-and-ewedu.webp'); }
+#breakfast        { background: url('/images/breakfast.jpg'); }
+#beverages        { background: url('/images/fizz.webp'); }
+
+/* Cards Grid */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.food-card {
+  width: 280px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+.food-card:hover { transform: translateY(-10px); }
+.food-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+.card-body h3 { margin: 0 0 8px; font-size: 1.3rem; }
+.card-body p { 
+  color: orangered; 
+  font-weight: bold; 
+  font-size: 1.4rem; 
+  margin: 5px 0;
+}
+.card-body button {
+  width: 100%;
+  padding: 12px;
+  background: orangered;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Smooth scroll & mobile */
+html { scroll-behavior: smooth; }
+@media (max-width: 768px) {
+  .category-section h1 { font-size: 3rem; }
+  .category-section { height: 40vh; background-attachment: scroll; }
+  .food-card { width: 90%; }
+}

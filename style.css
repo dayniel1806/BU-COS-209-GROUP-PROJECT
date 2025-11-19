@@ -1,3 +1,175 @@
+/* Basic Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding-top: 75px; /* Adjust for fixed header height */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: fixed;
+  box-shadow: 0 2px 6px orangered;
+  background: #222;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.LogoName {
+  font-size: 1.3rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: orangered;
+  font-weight: bold;
+}
+
+.LogoName span {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* Normal nav links */
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  padding: 10px 35px;
+  transition: all 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: orange;
+  transition: width 0.3s ease;
+}
+
+.nav a:hw {
+  color: orange;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s;
+}
+
+/* Hover styles */
+.dropdown-content a:hover {
+  background-color: #444;
+  color: orange;
+}
+
+/* Show the dropdown when hovering */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  top: 100%;
+  left: 0;
+}
+
+/* General Layout Styles */
+section,
+.meal-content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#mealHeader {
+  background: url("/images/men.png") center/cover no-repeat; 
+  /* Fallback or remove if you use a solid color/pattern */
+  background-color: #ccc; 
+  color: white;
+}
+
+/* Overlay for better text readability on images */
+#mealHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+.meal-content h1 {
+  color: white;
+}
+
+#menuParagraph {
+  color: white;
+}
+
 .features {
   display: flex;
   justify-content: space-around;
@@ -18,7 +190,7 @@
 }
 
 .feature i:hover{
-  color: orangered;
+  color: rgb(255, 31, 31);
 }
 
 
